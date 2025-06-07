@@ -106,7 +106,7 @@ def main():
             load_data_to_gpu(data_dict)
             pred_dicts, _ = model.forward(data_dict)
 
-            export_dir = '/volume/results'
+            export_dir = '/home/cfeng/DA-Project/openpcdet-training-pipeline/volume/results'
 
             data_dict_cpu = {}
 

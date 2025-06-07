@@ -100,7 +100,7 @@ def parse_numpy(directory):
 def create_imagesets_from_label_txt(directory, split, train_split=0.85):
     # frame list, if you leave switch outside property after the final labelled frame
     # would result in extra entires in frame_list but those don't have label txts
-
+    print('directory', directory)
     # create ImageSets folder
     imagesets_folder = os.path.join(directory, 'ImageSets')
     if not os.path.exists(imagesets_folder):
@@ -217,7 +217,8 @@ if __name__ == "__main__":
 
     args = parse_args()
     print(args)
-    
+    args.data_yaml = args.data_yaml[6:]
+    args.class_yaml = args.class_yaml[6:]
     # get the directory from yaml
     with open(args.data_yaml) as file:
         config = yaml.load(file, Loader=yaml.FullLoader)
@@ -252,7 +253,7 @@ if __name__ == "__main__":
     interbag_name_offset = 0
     starting_frame_idx = 0
     frame_idx_to_name = dict()
-
+    # print('merge_dirs', merge_dirs)
     for directory in tqdm(merge_dirs):
 
         # #change name of images
