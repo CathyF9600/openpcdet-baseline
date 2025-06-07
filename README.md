@@ -1,25 +1,4 @@
-## OpenPCDet Training Pipeline
-
-
-This repository holds our pipeline for training 3D Object Detection models using the OpenPCDet Toolkit. 
-
-### Setup instructions
-```
-git clone https://gitlab.com/autoronto-ADC2/perception/3d-object-detection/openpcdet-training-pipeline.git
-```
-
-```
-cd openpcdet-training-pipeline
-```
-
-``` 
-pip install -r requirements.txt
-```
-
-```
-python setup.py develop
-```
-
+# openpcdet-baseline
 
 ## OpenPCDet Env
 - python 3.10
@@ -84,4 +63,3 @@ Start training
 cd tools
 python train.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --epochs 80
 ```
-# openpcdet-baseline
