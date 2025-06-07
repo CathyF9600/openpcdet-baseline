@@ -57,8 +57,8 @@ vis.get_render_option().background_color = np.asarray([0, 0, 0])
 
 while True:
     try:
-        data_dict_file = f'results/data_dict_{FRAME:06d}.pkl'
-        pred_dict_file = f'results/pred_dicts_{FRAME:06d}.pkl'
+        data_dict_file = f'volume/results/data_dict_{FRAME:06d}.pkl'
+        pred_dict_file = f'volume/results/pred_dicts_{FRAME:06d}.pkl'
 
         with open(data_dict_file, 'rb') as f:
             data_dict = np.load(f, allow_pickle=True)
@@ -187,6 +187,7 @@ while True:
         FRAME += 1
 
     except FileNotFoundError:
+        print('file not found')
         break
 
 vis.destroy_window()

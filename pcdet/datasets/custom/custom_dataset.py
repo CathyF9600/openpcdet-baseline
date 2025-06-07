@@ -236,6 +236,7 @@ def create_custom_infos(dataset_cfg, class_names, data_path, save_path, workers=
         dataset_cfg=dataset_cfg, class_names=class_names, root_path=data_path,
         training=False, logger=common_utils.create_logger()
     )
+    print('data_path', data_path)
     train_split, val_split = 'train', 'val'
     num_features = len(dataset_cfg.POINT_FEATURE_ENCODING.src_feature_list)
 
@@ -275,7 +276,17 @@ if __name__ == '__main__':
         from easydict import EasyDict
 
         dataset_cfg = EasyDict(yaml.safe_load(open(sys.argv[2])))
-        ROOT_DIR = (Path(__file__).resolve().parent / '../../../').resolve()
+        ROOT_DIR = (Path(__file__).resolve().parent / '../../../../').resolve()
+
+        dataset_name = Path(dataset_cfg['SAVE_PATH']).name
+        dataset_path = ROOT_DIR / 'datasets' / dataset_name
+
+        # create_custom_infos(
+        #     dataset_cfg=dataset_cfg,
+        #     class_names=["car", "pedestrian", "barrels", "deers", "signs", "barricades", "railroad_bar_down"],
+        #     data_path=dataset_path,
+        #     save_path=dataset_path
+        # )
         create_custom_infos(
             dataset_cfg=dataset_cfg,
             # class_names=['Vehicle', 'Pedestrian', 'Cyclist'],
@@ -290,6 +301,6 @@ if __name__ == '__main__':
             # data_path=ROOT_DIR/'..'/'datasets'/'2023-04-08-signs_good_1',
             # save_path=ROOT_DIR/'..'/'datasets'/'2023-04-08-signs_good_1',
             
-             data_path=ROOT_DIR/'..'/'datasets'/dataset_cfg['SAVE_PATH'].split('/')[-1],
-             save_path=ROOT_DIR/'..'/'datasets'/dataset_cfg['SAVE_PATH'].split('/')[-1],
+             data_path=dataset_path, #ROOT_DIR/'..'/'datasets'/dataset_cfg['SAVE_PATH'].split('/')[-1],
+             save_path=dataset_path #ROOT_DIR/'..'/'datasets'/dataset_cfg['SAVE_PATH'].split('/')[-1],
         )

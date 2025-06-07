@@ -1,0 +1,14 @@
+*.egg-info
+*__pycache__
+.vscode/
+pcdet/ops/
+pcdet/version.py
+
+demo/
+build/
+output/
+results/
+
+*.xml
+*.pth
+*.mp4
