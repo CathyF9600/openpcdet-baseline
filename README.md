@@ -28,6 +28,8 @@ python setup.py develop
    |----2024-11-01_rl_fusion
    |----etc ...
 ```
+## Change this hard-coded path
+`https://github.com/CathyF9600/openpcdet-baseline/blob/main/tools/demo.py#L109`
 ## `python3 process_cvat_data.py`
 Database pedestrian: 10029
 Database car: 12946
