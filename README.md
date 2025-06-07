@@ -20,7 +20,12 @@ export CC=gcc-9
 export CXX=g++-9
 python setup.py develop
 ```
-
+## Where to put dataset
+|---openpcdet-baseline
+|---datasets
+   |----2024-11-28_downsview_park-1
+   |----2024-11-01_rl_fusion
+   |----etc ...
 ## `python3 process_cvat_data.py`
 Database pedestrian: 10029
 Database car: 12946
