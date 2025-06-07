@@ -1,0 +1,102 @@
+# custom_dataset.yaml but supports multiple datasets
+
+DATASET: 'CustomDatasetMultiple'
+
+# specify the paths for the datasets
+DATA_PATHS:
+  - '../../datasets/2023-04-22-dynamic'
+ # - '../../datasets/2024-05-27_cdr_perception_1'
+  - '../../datasets/2023-06-07_intersection_final_3'
+  #- '../../datasets/extraction_2024-06-04_perception_railroad_front'
+  #- '../../datasets/extraction_2024-04-20_perception_deer_2'
+  #- '../../datasets/extraction_2024-05-28_deer_demo_5'
+  #- '../../datasets/extraction_2024-04-20_perception_sign_2'
+
+  # - '../../datasets/2024-06-06_intersection_afternoon_2' no space left on device
+
+VAL_PATHS: 
+   - '../../datasets/2024-06-04_intersection_deer'
+   - '../../datasets/2024-06-06_intersection_pedestriation_2'
+
+# specify the save path for the results
+SAVE_PATH: '../../datasets/exp1'
+
+POINT_CLOUD_RANGE: [0, -39.68, -1, 69.12, 39.68, 3]
+
+MAP_CLASS_TO_KITTI: {
+  "car": "car",
+  "pedestrian": "pedestrian",
+  "barrels": "barrels",
+  "deers": "deers",
+  "signs": "signs",
+  "barricades": "barricades",
+  "fire_hydrant": "fire_hydrant",
+  "construction_barrel": "barrels",
+  "type_3_barricade": "barricades",
+  "yield_sign": "signs",
+  "stop_sign": "signs",
+  "traffic_sign": "signs",
+  "railroad_bar_down": "railroad_bar_down", 
+  "other_sign": "signs"
+}
+
+DATA_SPLIT: {
+    'train': train,
+    'test': val
+}
+
+INFO_PATH: {
+    'train': [custom_infos_train.pkl],
+    'test': [custom_infos_val.pkl],
+}
+
+POINT_FEATURE_ENCODING: {
+    encoding_type: absolute_coordinates_encoding,
+    used_feature_list: ['x', 'y', 'z', 'intensity'],
+    src_feature_list: ['x', 'y', 'z', 'intensity'],
+}
+
+DATA_AUGMENTOR:
+    DISABLE_AUG_LIST: ["gt_sampling", "random_world_flip", "random_world_rotation", "random_world_scaling"]
+    AUG_CONFIG_LIST:
+        - NAME: gt_sampling
+          USE_ROAD_PLANE: False
+          DB_INFO_PATH:
+              - custom_dbinfos_train.pkl
+          PREPARE: {
+            filter_by_min_points: ["car": 5, "pedestrian": 5, "barrels": 5, "deers": 5, "signs": 5, "barricades": 5, "fire_hydrant": 5]
+          }
+
+          SAMPLE_GROUPS: ["car": 0, "pedestrian": 0, "barrels": 0, "deers": 0, "signs": 0, "barricades": 0, "fire_hydrant": 0]
+          NUM_POINT_FEATURES: 4
+          DATABASE_WITH_FAKELIDAR: False
+          REMOVE_EXTRA_WIDTH: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+          LIMIT_WHOLE_SCENE: True
+
+        - NAME: random_world_flip
+          ALONG_AXIS_LIST: ['x', 'y']
+
+        - NAME: random_world_rotation
+          WORLD_ROT_ANGLE: [-0.78539816, 0.78539816]
+
+        - NAME: random_world_scaling
+          WORLD_SCALE_RANGE: [0.95, 1.05]
+
+
+DATA_PROCESSOR:
+    - NAME: mask_points_and_boxes_outside_range
+      REMOVE_OUTSIDE_BOXES: False
+
+    - NAME: shuffle_points
+      SHUFFLE_ENABLED: {
+        'train': False,
+        'test': False
+      }
+
+    - NAME: transform_points_to_voxels
+      VOXEL_SIZE: [0.16, 0.16, 4]
+      MAX_POINTS_PER_VOXEL: 32
+      MAX_NUMBER_OF_VOXELS: {
+        'train': 150000,
+        'test': 150000
+      }

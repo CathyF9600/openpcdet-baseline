@@ -1,0 +1,52 @@
+MAX_DIST: 50  # [m]
+MAX_X: 50
+MAX_Y: 20
+MAX_Z: 5
+
+MAX_VOL: 30
+MIN_VOL: 0.001
+
+MAX_L: 7.5
+MAX_W: 6
+MAX_H: 3
+MIN_L: 0.1
+MIN_W: 0.1
+MIN_H: 0.1
+
+SEARCH_LEN: 2.0
+MAX_STDEV_SCALING: 1.5  # set to 0 to disable motion corrections
+
+MIN_POINTS_IN_BOX: 10
+
+CLASS_PRIOR_TOL: 0.2
+
+# rosbag_dir: 'bags/2024-06-05_consstruction_autonomy_1'
+# rosbag_dir: 'bags/2023-04-22-dynamic-full'
+# rosbag_dir: 'bags/2024-06-03_perception_driving_back'
+# rosbag_dir: 'bags/2024-06-04_autonomoy_intersection_run_2'
+# rosbag_dir: 'bags/2024-06-04_construction_1130_5'
+# rosbag_dir: 'bags/2024-06-04_highway_autonomy_4pm_3'
+# rosbag_dir: 'bags/2024-06-04_construction_autonomy_2'
+# rosbag_dir: 'bags/2024-05-28_autonomy_3'
+# rosbag_dir: '/home/robert/bags/2023-10-07_perception_test'
+# rosbag_dir: '/home/robert/bags/2024-11-01_depth_3m'
+
+plot_bev: False
+generate_autolabels: False
+extract_velodyne: True
+
+tracker_topic: '/autotrack/tracker/tracked_objects'
+left_camera_topic: '/camera/left_wide/compressed'
+right_camera_topic: '/camera/right_wide/compressed'
+center_camera_topic: '/camera/center_wide/compressed'
+left_raw_lidar_topic: '/lidar/left'
+right_raw_lidar_topic: '/lidar/right'
+center_top_raw_lidar_topic: '/lidar/center/top'
+center_bottom_raw_lidar_topic: '/lidar/center/bottom'
+left_gprm_topic: '/p_3dod/gprm/left_top'
+right_gprm_topic: '/p_3dod/gprm/right_top'
+center_top_gprm_topic: '/p_3dod/gprm/center_top'
+center_bottom_gprm_topic: '/p_3dod/gprm/center_bottom'
+fused_lidar_topic: '/p_3dod/gprm/pc_fusion'
+imu_topic: '/tf'
+velodyne_topic: '/velodyne_points'

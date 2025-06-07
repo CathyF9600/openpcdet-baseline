@@ -1,0 +1,50 @@
+pc_fusion:
+  ros__parameters:
+    crop_range: 50.0
+    alpha: 0.0349
+    num_bins_small: 30
+    num_bins_large: 11
+    bin_size_small: 0.5
+    bin_size_large: 3.0
+    rmin: 3.0
+    rmax: 51.0
+    tolerance: 0.12
+    Tm: 0.4
+    Tm_small: 0.2
+    Tb: 0.8
+    Trmse: 0.1
+    Tdprev: 1.0
+    get_gp: true
+    zmin: 10.0
+    voxel_size: 0.00005
+    apply_voxel: true
+    himmelsbach_debug: true
+    radius: 0.3
+    secondary_cluster_dist: 1.0
+    min_cluster_size: 15
+    max_object_size: [ 10.8, 6.0, 5.8 ]
+    min_object_size: [ 0.2, 0.05, 0.2 ]
+    barrel_mean: [ 1.0, 0.4, 1.0 ]
+    barrel_var: [ 0.2, 0.3, 0.3 ]
+    ped_mean: [ 0.9, 0.6, 1.9 ]
+    ped_var: [ 0.2, 0.2, 0.3 ]
+    child_mean: [ 0.3, 0.3, 1.15 ]
+    child_var: [ 0.0, 0.0, 0.0 ]
+    deer_mean: [1.4, 0.6, 1.4]
+    deer_var: [0.3, 0.25, 0.2]
+    barricade_mean: [ 1.8, 0.4, 1.8 ]
+    barricade_var: [ 0.3, 0.2, 0.3 ]
+    car_mean: [4.50, 2.00, 1.60]
+    car_var: [1.00, 0.80, 0.60]
+    sign_mean: [ 1.5, 0.4, 2.0 ]
+    sign_var: [ 0.6, 0.2, 0.6 ]
+    rail_bar_mean: [6.0, 0.1, 2.5]
+    rail_bar_var: [1.5, 0.3, 1.9]
+    default_confidence: 0.9
+    custom_confidence: false
+    roll: false
+    yaw: true
+    lidar_patience: 0.05
+    num_kept_scans: 10
+    intensity_threshold: 10.0
+    intensity_downscale: 0.1

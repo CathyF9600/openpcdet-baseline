@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  openpcdet:
+    image: openpcdet:ata
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    stdin_open: true
+    tty: true
+    ipc: host
+    network_mode: host
+    privileged: true
+    environment:
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility,graphics
+      # DISPLAY: $DISPLAY
+      DISPLAY: :10
+      # X11_SOCKET: /tmp/.X11-unix
+      XAUTHORITY: /home/${USER}/.Xauthority
+      # XAUTHORITY: /Users/${USER}/.Xauthority
+      QT_X11_NO_MITSHM: 1
+      QT_GRAPHICSSYSTEM: native   
+    volumes:
+      - ../:/volume
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /media/ata/One Touch:/data
+      - /media/ata/wdbluessd:/wd
+      - /media/ata/wdbluessd/autodrive/datasets:/datasets
+    working_dir: /volume
+    command: /bin/bash
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              # device_ids: ['0', '1']
+              capabilities: [gpu]
+

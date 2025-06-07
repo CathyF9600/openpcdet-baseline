@@ -1,0 +1,184 @@
+DATASET: 'CustomDataset'
+
+# TRAIN
+# MERGE_PATHS: 
+#   - '../../datasets/2024-11-28_downsview_park-1'
+#   - '../../datasets/2024-11-01_rl_fusion'
+#   - '../../datasets/2024-04-27_queens_perception_3'
+#   - '../../datasets/2024-05-11_utias75_dyn_peped_fused'
+#   - '../../datasets/2024-05-11_utias75_stop'
+#   - '../../datasets/2024-05-14_rrbar_5'
+#   - '../../datasets/2024-05-27_signs_testing'
+#   - '../../datasets/2024-05-08_ped_crossing_2'
+#   - '../../datasets/2024-04-20_perception_barricade_3'
+#   - '../../datasets/2024-05-29_planning_test_stopping'
+#   - '../../datasets/2024-05-27_cdr_perception_1'
+#   - '../../datasets/2024-05-14_rrbar_4'
+#   - '../../datasets/2024-04-20_perception_sign_2'
+#   - '../../datasets/2024-04-20_perception_barricade_1'
+#   - '../../datasets/2024-04-20_perception_pedestrian_1'
+#   - '../../datasets/2024-04-20_perception_deer_2'
+#   - '../../datasets/2024-05-28_deer_demo_5'
+#   - '../../datasets/2024-05-28_barrel_is_barricade'
+#   - '../../datasets/2024-05-27_cdr_perception_moving'
+#   - '../../datasets/2024-06-04_intersection_pedestrian'
+#   - '../../datasets/2024-06-06_intersection_pedestrian_2'
+#   - '../../datasets/2024-06-06_intersection_afternoon_2'
+#   - '../../datasets/2024-06-03_perception_driving_back'
+#   - '../../datasets/2024-05-27_cdr_deer_take6'
+#   # - '../../datasets/2024-06-04_intersection_deer'
+#   # - '../../datasets/2024-06-04_perception_railroad_back'
+#   - '../../datasets/2024-06-04_perception_railroad_front'
+#   - '../../datasets/2024-06-04_highway_autonomy_4pm_tight_3'
+#   - '../../datasets/2024-06-04_construction_down_4'
+#   - '../../datasets/2024-06-03_highway_forward_far'
+#   - '../../datasets/2024-06-05_autonomy_highway_morning_2'
+#   - '../../datasets/2024-01-06_planning_stopsign_1'
+#   - '../../datasets/2023-11-18_tracker_benchmark_4'
+#   - '../../datasets/2023-11-18_tracker_benchmark_3'
+#   - '../../datasets/2023-11-18_tracker_benchmark_2'
+#   - '../../datasets/2023-10-15_mock_highway_8'
+#   - '../../datasets/2023-06-08_jason_tracking'
+#   - '../../datasets/2023-06-07_intersection_final_3'
+#   - '../../datasets/2023-05-05-highway-challenge-bag-2'
+#   # - '../../datasets/2023-04-22-dynamic'
+#   - '../../datasets/2023-04-08-signs_good_1'
+#   - '../../datasets/2023-04-08-construction_good_2'
+#   - '../../datasets/2023-04-08-construction_good_1'
+#   - '../../datasets/2023-11-18_3dod_data_collection_4'
+#   - '../../datasets/2023-11-25_planning_highway_1'
+
+# SAVE_PATH: '../../datasets/cepton_full_train_dataset_all'
+
+# DATA_PATH: '../../datasets/cepton_full_train_dataset_all'
+
+# TRAIN (original)
+MERGE_PATHS: 
+  - '../../datasets/2024-11-28_downsview_park-1'
+  - '../../datasets/2024-11-01_rl_fusion'
+  - '../../datasets/2024-04-27_queens_perception_3'
+  - '../../datasets/2024-05-11_utias75_dyn_peped_fused'
+  - '../../datasets/2024-05-11_utias75_stop'
+  - '../../datasets/2024-05-14_rrbar_5'
+  - '../../datasets/2024-05-27_signs_testing'
+  - '../../datasets/2024-05-08_ped_crossing_2'
+  - '../../datasets/2024-04-20_perception_barricade_3'
+  - '../../datasets/2024-05-29_planning_test_stopping'
+  - '../../datasets/2024-05-27_cdr_perception_1'
+  - '../../datasets/2024-05-14_rrbar_4'
+  # - '../../datasets/2024-04-20_perception_sign_2'
+  - '../../datasets/2024-04-20_perception_barricade_1'
+  - '../../datasets/2024-04-20_perception_pedestrian_1'
+  - '../../datasets/2024-04-20_perception_deer_2'
+  - '../../datasets/2024-05-28_deer_demo_5'
+  - '../../datasets/2024-05-28_barrel_is_barricade'
+  - '../../datasets/2024-05-27_cdr_perception_moving'
+  - '../../datasets/2024-06-04_intersection_pedestrian'
+  - '../../datasets/2024-06-06_intersection_pedestrian_2'
+  - '../../datasets/2024-06-06_intersection_afternoon_2'
+  - '../../datasets/2024-06-03_perception_driving_back'
+  - '../../datasets/2024-05-27_cdr_deer_take6'
+  - '../../datasets/2024-06-04_intersection_deer'
+  # - '../../datasets/2024-06-04_perception_railroad_back'
+  - '../../datasets/2024-06-04_perception_railroad_front'
+  - '../../datasets/2024-06-04_highway_autonomy_4pm_tight_3'
+  - '../../datasets/2024-06-04_construction_down_4'
+  - '../../datasets/2024-06-03_highway_forward_far'
+  - '../../datasets/2024-06-05_autonomy_highway_morning_2'
+  - '../../datasets/2024-01-06_planning_stopsign_1'
+  # - '../../datasets/2023-11-18_tracker_benchmark_4'
+  - '../../datasets/2023-11-18_tracker_benchmark_3'
+  - '../../datasets/2023-11-18_tracker_benchmark_2'
+  - '../../datasets/2023-10-15_mock_highway_8'
+  - '../../datasets/2023-06-08_jason_tracking'
+  - '../../datasets/2023-06-07_intersection_final_3'
+  - '../../datasets/2023-05-05-highway-challenge-bag-2'
+  # - '../../datasets/2023-04-22-dynamic'
+  - '../../datasets/2023-04-08-signs_good_1'
+  - '../../datasets/2023-04-08-construction_good_2'
+  - '../../datasets/2023-04-08-construction_good_1'
+  - '../../datasets/2023-11-18_3dod_data_collection_4'
+  - '../../datasets/2023-11-25_planning_highway_1'
+
+# SAVE_PATH: '../../datasets/cepton_full_train_dataset_all_m3'
+
+# DATA_PATH: '../../datasets/cepton_full_train_dataset_all_m3'
+
+
+
+
+# TEST
+# MERGE_PATHS:
+#   - '../../datasets/2024-06-04_intersection_deer' 
+#   - '../../datasets/2023-04-22-dynamic'
+#   - '../../datasets/2024-06-04_perception_railroad_back'
+
+# SAVE_PATH: '../../datasets/cepton_test_dataset_all'
+
+# DATA_PATH: '../../datasets/cepton_test_dataset_all'
+
+# TEST (original)
+# MERGE_PATHS:
+#   - '../../datasets/2024-04-20_perception_sign_2'
+#   - '../../datasets/2023-04-22-dynamic'
+#   - '../../datasets/2024-06-04_perception_railroad_back'
+#   - '../../datasets/2023-11-18_tracker_benchmark_4' 
+
+SAVE_PATH: '../../datasets/cepton_test_dataset_all_m3'
+
+DATA_PATH: '../../datasets/cepton_test_dataset_all_m3'
+
+
+POINT_CLOUD_RANGE: [0, -39.68, -1, 69.12, 39.68, 3]
+
+MAP_CLASS_TO_KITTI: {
+  "car": "car",
+  "pedestrian": "pedestrian",
+  "barrels": "barrels",
+  "deers": "deers",
+  "deer": "deers",
+  "signs": "signs",
+  "barricades": "barricades",
+  "construction_barrel": "barrels",
+  "type_3_barricade": "barricades",
+  "yield_sign": "signs",
+  "stop_sign": "signs",
+  "traffic_sign": "signs",
+  "railroad_bar_down": "railroad_bar_down",
+  "other_sign": "signs",
+}
+
+DATA_SPLIT: {
+    'train': train,
+    'test': val
+}
+
+INFO_PATH: {
+    'train': [custom_infos_train.pkl],
+    'test': [custom_infos_val.pkl],
+}
+
+POINT_FEATURE_ENCODING: {
+    encoding_type: absolute_coordinates_encoding,
+    used_feature_list: ['x', 'y', 'z', 'intensity'],
+    src_feature_list: ['x', 'y', 'z', 'intensity'],
+}
+
+
+DATA_PROCESSOR:
+    - NAME: mask_points_and_boxes_outside_range
+      REMOVE_OUTSIDE_BOXES: False
+
+    - NAME: shuffle_points
+      SHUFFLE_ENABLED: {
+        'train': False,
+        'test': False
+      }
+
+    - NAME: transform_points_to_voxels
+      VOXEL_SIZE: [0.16, 0.16, 4]
+      MAX_POINTS_PER_VOXEL: 32
+      MAX_NUMBER_OF_VOXELS: {
+        'train': 150000,
+        'test': 150000
+      }
