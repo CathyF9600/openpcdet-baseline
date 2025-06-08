@@ -52,12 +52,15 @@ gdown 1wMxWTpU1qUoY3DsCH31WJmvJxcjFXKlm
 ```
 
 To download other weights, go to the google drive page from the model zoo, then gdown <id> where <id> is the string after d/ in the url.
-
+Download checkpoint and put them in `pretrain/ckpt/*`
+```
+mkdir -p volume/results # from main dir
+```
 From the `/tools` folder:
 ```
-python demo.py --cfg_file cfgs/kitti_models/pointpillar.yaml --ckpt ../pointpillar_7728.pth --data_path ../demo/data/kitti/000008.bin
+python demo.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --ckpt pretrain/ckpt/checkpoint_epoch_160.pth
 ```
-
+or if you're testing:
 ```
 python demo.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --ckpt ../output/kitti_models/pointpillars_cvat/default/ckpt/checkpoint_epoch_80.pth
 ```
