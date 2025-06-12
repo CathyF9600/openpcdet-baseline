@@ -1,6 +1,6 @@
 # openpcdet-baseline
 ## June 12 - June 15 Task:
-### OpenPCDet Env
+### Step 1: OpenPCDet Env
 - python 3.10
 - pytorch 3.10 + cu115, etc
 - requirements.txt
@@ -20,7 +20,7 @@ export CC=gcc-9
 export CXX=g++-9
 python setup.py develop
 ```
-### Where to put dataset
+### Step 2: Where to put dataset
 Download a small dataset from here: https://drive.google.com/file/d/1GtKeCZoB42x4yJh18Suc7Hh2xYZnCC8t/view?usp=sharing 
 ```
 |---openpcdet-baseline
@@ -46,7 +46,7 @@ Database railroad_bar_down: 1996
 Database deers: 1634
 ```
 
-### Run Demo
+### Step 3: Run Demo
 Download pointpillars weights:
 ```
 pip install gdown
