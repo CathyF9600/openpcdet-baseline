@@ -42,11 +42,6 @@ Database barrels: 22990
 Database railroad_bar_down: 1996
 Database deers: 1634
 ```
-## To train
-- `python3 train.py --cfg_file cfgs/kitti_models/pointpillars_half_backbone.yaml --epochs 160 --ckpt_save_interval 10`
-- `python demo.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --ckpt ../checkpoint_epoch_160.pth`
-
-
 
 ### Run Demo
 Download pointpillars weights:
