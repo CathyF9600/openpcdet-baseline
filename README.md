@@ -21,6 +21,7 @@ export CXX=g++-9
 python setup.py develop
 ```
 ## Where to put dataset
+Download a small dataset from here: https://drive.google.com/file/d/1GtKeCZoB42x4yJh18Suc7Hh2xYZnCC8t/view?usp=sharing 
 ```
 |---openpcdet-baseline
 |---datasets
