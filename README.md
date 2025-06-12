@@ -32,6 +32,8 @@ Download a small dataset from here: https://drive.google.com/file/d/1GtKeCZoB42x
 ## Change this hard-coded path
 `https://github.com/CathyF9600/openpcdet-baseline/blob/main/tools/demo.py#L109`
 ## `python3 process_cvat_data.py`
+If you see something like this in the output then you're good:
+```
 Database pedestrian: 10029
 Database car: 12946
 Database signs: 14681
@@ -39,6 +41,7 @@ Database barricades: 10449
 Database barrels: 22990
 Database railroad_bar_down: 1996
 Database deers: 1634
+```
 ## To train
 - `python3 train.py --cfg_file cfgs/kitti_models/pointpillars_half_backbone.yaml --epochs 160 --ckpt_save_interval 10`
 - `python demo.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --ckpt ../checkpoint_epoch_160.pth`
