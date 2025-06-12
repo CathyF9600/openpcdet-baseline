@@ -1,5 +1,5 @@
 # openpcdet-baseline
-
+# June 12 - June 15 Task:
 ## OpenPCDet Env
 - python 3.10
 - pytorch 3.10 + cu115, etc
@@ -58,13 +58,14 @@ mkdir -p volume/results # from main dir
 ```
 From the `/tools` folder:
 ```
-python demo.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --ckpt pretrain/ckpt/checkpoint_epoch_160.pth
-```
-or if you're testing:
-```
-python demo.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --ckpt ../output/kitti_models/pointpillars_cvat/default/ckpt/checkpoint_epoch_80.pth
+python demo.py --cfg_file cfgs/kitti_models/pointpillars_half_backbone.yaml --ckpt ../pretrain/ckpt/checkpoint_epoch_160.pth
 ```
 
+Once you finish generating results, now in the main directory run the following to visualize a live demo of your result:
+```
+python3 vis_3od.py
+```
+# After June 15 （To be updated)
 ### Training
 Create dataset infos
 ```
@@ -74,4 +75,8 @@ Start training
 ```
 cd tools
 python train.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --epochs 80
+```
+if you're testing:
+```
+python demo.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --ckpt ../output/kitti_models/pointpillars_cvat/default/ckpt/checkpoint_epoch_80.pth
 ```
