@@ -1,6 +1,6 @@
 # openpcdet-baseline
-# June 12 - June 15 Task:
-## OpenPCDet Env
+## June 12 - June 15 Task:
+### OpenPCDet Env
 - python 3.10
 - pytorch 3.10 + cu115, etc
 - requirements.txt
@@ -20,7 +20,7 @@ export CC=gcc-9
 export CXX=g++-9
 python setup.py develop
 ```
-## Where to put dataset
+### Where to put dataset
 Download a small dataset from here: https://drive.google.com/file/d/1GtKeCZoB42x4yJh18Suc7Hh2xYZnCC8t/view?usp=sharing 
 ```
 |---openpcdet-baseline
@@ -67,18 +67,4 @@ Once you finish generating results, now in the main directory run the following 
 ```
 python3 vis_3od.py
 ```
-# After June 15 （To be updated)
-### Training
-Create dataset infos
-```
-python -m pcdet.datasets.custom.custom_dataset create_custom_infos tools/cfgs/dataset_configs/custom_dataset.yaml
-```
-Start training
-```
-cd tools
-python train.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --epochs 80
-```
-if you're testing:
-```
-python demo.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --ckpt ../output/kitti_models/pointpillars_cvat/default/ckpt/checkpoint_epoch_80.pth
-```
+# Tasks after this can be found under Issues
