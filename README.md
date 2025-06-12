@@ -29,9 +29,11 @@ Download a small dataset from here: https://drive.google.com/file/d/1GtKeCZoB42x
    |----2024-11-01_rl_fusion
    |----etc ...
 ```
-## Change this hard-coded path
-`https://github.com/CathyF9600/openpcdet-baseline/blob/main/tools/demo.py#L109`
-## `python3 process_cvat_data.py`
+Change this hard-coded path at this line: `https://github.com/CathyF9600/openpcdet-baseline/blob/main/tools/demo.py#L109`
+
+Now run
+```python3 process_cvat_data.py
+```
 If you see something like this in the output then you're good:
 ```
 Database pedestrian: 10029
