@@ -85,3 +85,15 @@ cd tools
 python train.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --epochs 80
 ```
 # openpcdet-baseline
+To create visualizable output (written into volume/results)
+```
+python demo.py --cfg_file cfgs/kitti_models/pointpillars_half_backbone.yaml --ckpt ../pretrain/ckpt/checkpoint_epoch_160.pth 
+```
+
+# Eval on unseen
+1. edit `custom_dataset.yaml` to only keep unseen test set under MERGE_PATH
+2. now run `python3 process_cvat_data.py`
+3. now run
+```
+python test.py --cfg_file cfgs/kitti_models/voxel_rcnn_cvat.yaml --ckpt /home/cfeng/DA-Project/openpcdet-training-pipeline/output/kitti_models/voxel_rcnn_cvat/default/ckpt/latest_model.pth
+```
