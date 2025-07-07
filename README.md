@@ -67,4 +67,37 @@ Once you finish generating results, now in the main directory run the following 
 ```
 python3 vis_3od.py
 ```
-# Tasks after this can be found under Issues
+# Training
+This two are the same thing:
+```
+python process_cvat_data.py
+python -m pcdet.datasets.custom.custom_dataset create_custom_infos tools/cfgs/dataset_configs/custom_dataset.yaml
+```
+Pointpillar
+```
+python process_cvat_data.py --data_yaml tools/cfgs/dataset_configs/custom_dataset.yaml
+python train.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --epochs 80
+
+python process_cvat_data.py --data_yaml tools/cfgs/dataset_configs/custom_dataset_test.yaml
+python test.py --cfg_file cfgs/kitti_models/pointpillars_cvat.yaml --ckpt /home/cfeng/DA-Project/openpcdet-training-pipeline/output/kitti_models/pointpillars_cvat/default/ckpt/latest_model.pth
+```
+Voxel-RCNN
+```
+python process_cvat_data.py --data_yaml tools/cfgs/dataset_configs/custom_dataset.yaml --class_yaml tools/cfgs/kitti_models/voxel_rcnn_cvat.yaml
+python train.py --cfg_file cfgs/kitti_models/voxel_rcnn_cvat.yaml --ckpt_save_interval 10
+
+python process_cvat_data.py --data_yaml tools/cfgs/dataset_configs/custom_dataset_test.yaml --class_yaml tools/cfgs/kitti_models/voxel_rcnn_cvat.yaml
+python test.py --cfg_file cfgs/kitti_models/voxel_rcnn_cvat.yaml --ckpt /home/cfeng/DA-Project/openpcdet-training-pipeline/output/kitti_models/voxel_rcnn_cvat/default/ckpt/latest_model.pth
+```
+Point-RCNN
+```
+python process_cvat_data.py --data_yaml tools/cfgs/dataset_configs/custom_dataset.yaml --class_yaml tools/cfgs/kitti_models/pointrcnn_cvat.yaml
+python train.py --cfg_file cfgs/kitti_models/pointrcnn_cvat.yaml --epochs 80  --ckpt_save_interval 10
+
+python process_cvat_data.py --data_yaml tools/cfgs/dataset_configs/custom_dataset_test.yaml --class_yaml tools/cfgs/kitti_models/pointrcnn_cvat.yaml
+python test.py --cfg_file cfgs/kitti_models/pointrcnn_cvat.yaml --ckpt /home/cfeng/DA-Project/openpcdet-training-pipeline/output/kitti_models/pointrcnn_cvat/default/ckpt/latest_model.pth
+```
+
+PV-RCNN
+```
+```

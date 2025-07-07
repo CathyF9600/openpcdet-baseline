@@ -200,12 +200,20 @@ class DataProcessor(object):
                     if len(far_idxs_choice) > 0 else near_idxs_choice
             else: 
                 choice = np.arange(0, len(points), dtype=np.int32)
-                choice = np.random.choice(choice, num_points, replace=False)
+                try:
+                    choice = np.random.choice(choice, num_points, replace=False)
+                except ValueError as e:
+                    print(f"Fall back to sample with replace due to {e}")
+                    choice = np.random.choice(choice, num_points, replace=True)
             np.random.shuffle(choice)
         else:
             choice = np.arange(0, len(points), dtype=np.int32)
             if num_points > len(points):
-                extra_choice = np.random.choice(choice, num_points - len(points), replace=False)
+                try:
+                    extra_choice = np.random.choice(choice, num_points - len(points), replace=False)
+                except ValueError as e:
+                    print(f"Fall back to sample with replace due to {e}")
+                    extra_choice = np.random.choice(choice, num_points - len(points), replace=True)
                 choice = np.concatenate((choice, extra_choice), axis=0)
             np.random.shuffle(choice)
         data_dict['points'] = points[choice]
