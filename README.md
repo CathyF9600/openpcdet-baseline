@@ -100,4 +100,22 @@ python test.py --cfg_file cfgs/kitti_models/pointrcnn_cvat.yaml --ckpt /home/cfe
 
 PV-RCNN
 ```
+python process_cvat_data.py --data_yaml tools/cfgs/dataset_configs/custom_dataset.yaml --class_yaml tools/cfgs/kitti_models/pv_rcnn_cvat.yaml
+python train.py --cfg_file cfgs/kitti_models/pv_rcnn_cvat.yaml --epochs 80  --ckpt_save_interval 10
+
+python process_cvat_data.py --data_yaml tools/cfgs/dataset_configs/custom_dataset_test.yaml --class_yaml tools/cfgs/kitti_models/pv_rcnn_cvat.yaml
+python test.py --cfg_file cfgs/kitti_models/pv_rcnn_cvat.yaml --ckpt /home/cfeng/DA-Project/openpcdet-training-pipeline/output/kitti_models/pv_rcnn_cvat/default/ckpt/latest_model.pth
+```
+
+Tensorboard:
+```
+cd output/kitti_models/pointrcnn_cvat/default
+tensorboard --logdir=./tensorboard --port 6006
+```
+
+Tmux:
+```
+tmux attach -t  mysession
+
+scroll up: ctrl + B + [
 ```
